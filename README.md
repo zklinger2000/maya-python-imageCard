@@ -10,7 +10,7 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 <img src="./img/screenShot_01.png"/>
 - File -> Export -> Layers to files.
 - Set Type to PNG-24.
-- Make sure Trim Layers and Transparency are checked.
+- Make sure **Trim Layers** and **Transparency** are checked **on**.
 <img src="./img/exportLayers.png"/>
 
 ### Step 2. Maya - imageCard Importing
