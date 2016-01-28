@@ -5,7 +5,9 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 ### Step 1. Photoshop
 > When deciding how to paint the individual layers here, try and think of breaking down the objects in the image into pieces you might cut out of paper to build a 3D object.  I like to think of building a house out of playing cards.  The cartoon South Park is the best example of what we're going for here.
 
-- Create an image in Photoshop with multiple layers.
+- Start by creating a new image, 900 x 600 pixels (just to keep it simple, I'm using the "Photo" preset).  Make sure **Color Mode** is **16-bit** and **Background Contents** is set to **Transparent**.
+- Create different layers to represent a ground plane and a couple of objects.
+<img src="./img/screenShot_01.png"/>
 - File -> Export -> Layers to files.
 - Set Type to PNG-24.
 - Make sure Trim Layers and Transparency are checked.
