@@ -1,5 +1,6 @@
 # maya-python-imageCard
-This is project is about building a workflow for creating 3D scenes from 2D images.
+This is a project describing a workflow to create 3D scenes from 2D images.
+<img src="./img/pancake_daytime_output_083.jpg"/>
 
 ### Step 1. Photoshop
 > When deciding how to paint the individual layers here, try and think of breaking down the objects in the image into pieces you might cut out of paper to build a 3D object.  I like to think of building a house out of playing cards.  The cartoon South Park is the best example of what we're going for here.
