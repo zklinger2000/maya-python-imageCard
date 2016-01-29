@@ -68,7 +68,7 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 <img src="./example/example_comp.png"/>
 
 ### Final Thoughts
-> There are still some issues with premultiplying around the edges, but that's due to the images being drawn in Photoshop without proper alpha channels.  I've found that just simply adding a lot of detail and drawing with a thich outline, comic book style, they get hidden mostly.  Otherwise, it's been an interesting exercise.  Thanks for reading!  I'd love to see how people can make this  better.
+> There are still some issues with premultiplying around the edges, but that's due to the images being drawn in Photoshop without proper alpha channels.  I've found that just simply adding a lot of detail and drawing with a thick outline, comic book style, they get hidden mostly.  Otherwise, it's been an interesting exercise.  Thanks for reading!  I'd love to see how people can make this  better.
 <img src="./img/mech_depot.jpg"/>
 
 
