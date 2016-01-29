@@ -17,7 +17,7 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 - Open your ```~/Documents/maya/scripts/``` folder from a terminal window.
 - Type ``` git clone https://github.com/zklinger2000/maya-python-imageCard.git ``` to download the scripts.
 
-### Step 2. Maya - imageCard Importing
+### Step 3. Maya - imageCard Importing
 - Open up Maya to a blank scene.
 - Load the python script [imageCardsImport.py][pySetup] into the script editor.
 - Make sure all the folder paths in [gravModTools.py][gMT] and [imageCardsImport.py][pySetup] are correctly assigned to your local folders.
@@ -27,7 +27,9 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 -  Zoom out and click on the **masterLayer** in the Render layer tab to see the imageCards.
 <img src="./img/scriptComplete.png"/>
 
-### Step 3. Maya - Scene Building
+### Step 4. Maya - Scene Building
+- TIP: In the viewport panel, go to Renderer -> Viewport 2.0 -> [] and change **Transparency Algorithm** to **Depth Peeling**.
+<img src="./img/depthPeeling.png"/>
 - Move each **imageCard** (2D plane) into the desired position.
 - Be careful to avoid any tightly overlapping or intersecting planes whenever possible.  Although this can also produce interesting results...
 
