@@ -46,10 +46,19 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 - **Much more detail is required here**
 - Add a simple camera to your scene.
 - Turn off all the other render layers and render out the color/beauty pass.
+
 **Beauty Pass**
 <img src="./example/example_beauty.png"/>
+
 **Ambient Occlusion Pass**
 <img src="./example/example_AO.png"/>
+
+**Z-Depth Pass**
+<img src="./example/example_zDepth.png"/>
+
+**Position Pass**
+<img src="./example/example_position.png"/>
+
 - Use Software rendering for Z-Depth pass
 
 ### Step 7. Fusion - Compositing
