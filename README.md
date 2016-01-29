@@ -31,17 +31,25 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 - TIP: In the viewport panel, go to Renderer -> Viewport 2.0 -> [] and change **Transparency Algorithm** to **Depth Peeling**.
 <img src="./img/depthPeeling.png"/>
 - Move each **imageCard** (2D plane) into the desired position.
+<img src="./img/placingCards.png"/>
 - Be careful to avoid any tightly overlapping or intersecting planes whenever possible.  Although this can also produce interesting results...
 
-### Step 4. Maya - Lighting
+### Step 5. Maya - Lighting
 - Only add lights to the master/beauty render layer!
 - Use whatever lights you desire, but simple spot, point and directional lights save tons of rendering time.
+- Make sure you turn "default light" off in the Render Globals.
+- Use mentalray as your renderer for each pass except Z-Depth.
+- Final Gather is optional.
+<img src="./img/lighting.png"/>
 
-### Step 5. Maya - Rendering
+### Step 6. Maya - Rendering
 - **Much more detail is required here**
+- Add a simple camera to your scene.
+- Turn off all the other render layers and render out the color/beauty pass.
+<img src="./example/example_beauty.png"/>
 - Use Software rendering for Z-Depth pass
 
-### Step 6. Fusion - Compositing
+### Step 7. Fusion - Compositing
 - **Tons of detail here...**
 
    [pySetup]: <https://github.com/zklinger2000/maya-python-imageCard/blob/master/scripts/imageCardsImport.py>
