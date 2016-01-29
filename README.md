@@ -13,6 +13,10 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 - Make sure **Trim Layers** and **Transparency** are checked **on**.
 <img src="./img/exportLayers.png"/>
 
+### Step 2. Maya - Python Script
+- Open your ```~/Documents/maya/scripts/``` folder from a terminal window.
+- Type ``` git clone https://github.com/zklinger2000/maya-python-imageCard ``` to download the scripts.
+
 ### Step 2. Maya - imageCard Importing
 - Open up Maya to a blank scene.
 - Load the python script [coffeeSetup.py][pySetup].
