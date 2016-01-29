@@ -31,8 +31,8 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 - TIP: In the viewport panel, go to Renderer -> Viewport 2.0 -> [] and change **Transparency Algorithm** to **Depth Peeling**.
 <img src="./img/depthPeeling.png"/>
 - Move each **imageCard** (2D plane) into the desired position.
-- Be careful to avoid any tightly overlapping or intersecting planes whenever possible.  Although this can also produce interesting results...
 <img src="./img/placingCards.png"/>
+- Be careful to avoid any tightly overlapping or intersecting planes whenever possible.  Although this can also produce interesting results...
 
 ### Step 5. Maya - Lighting
 - Only add lights to the master/beauty render layer!
