@@ -37,9 +37,16 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 ### Step 5. Maya - Lighting
 - Only add lights to the master/beauty render layer!
 - Use whatever lights you desire, but simple spot, point and directional lights save tons of rendering time.
+- Make sure you turn "default light" off in the Render Globals.
+- Use mentalray as your renderer for each pass except Z-Depth.
+- Final Gather is optional.
+<img src="./img/lighting.png"/>
 
 ### Step 6. Maya - Rendering
 - **Much more detail is required here**
+- Add a simple camera to your scene.
+- Turn off all the other render layers and render out the color/beauty pass.
+<img src="./example/example_beauty.png"/>
 - Use Software rendering for Z-Depth pass
 
 ### Step 7. Fusion - Compositing
