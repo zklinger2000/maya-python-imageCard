@@ -25,6 +25,7 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 -  Depending on how many images you have in the folder and how big they are, this may take a little time.
 -  Once the script has completed running, if there are no errors (usually having to do with improper folder name escaping, etc.), you will see a big black, yellow, red and green blob filling up your viewport.
 -  Zoom out and click on the **masterLayer** in the Render layer tab to see the imageCards.
+<img src="./img/scriptComplete.png"/>
 
 ### Step 3. Maya - Scene Building
 - Move each **imageCard** (2D plane) into the desired position.
