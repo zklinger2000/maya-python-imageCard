@@ -20,7 +20,7 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 ### Step 2. Maya - imageCard Importing
 - Open up Maya to a blank scene.
 - Load the python script [imageCardsImport.py][pySetup] into the script editor.
-- Make sure all the folder paths in [gravModTools.py][gMT]gravModTools.py and [imageCardsImport.py][pySetup] are correctly assigned to your local folders.
+- Make sure all the folder paths in [gravModTools.py][gMT] and [imageCardsImport.py][pySetup] are correctly assigned to your local folders.
 -  Highlight the entire script in the script editor and hit ``` Enter ```. (There are multiple ways to run scripts in Maya other than this one)
 -  Depending on how many images you have in the folder and how big they are, this may take a little time.
 -  Once the script has completed running, if there are no errors (usually having to do with improper folder name escaping, etc.), you will see a big black, yellow, red and green blob filling up your viewport.
