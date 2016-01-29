@@ -64,5 +64,8 @@ This is a project describing a workflow to create 3D scenes from 2D images.
 ### Step 7. Fusion - Compositing
 - **Tons of detail here...**
 
+**Final Comp**
+<img src="./example/example_comp.png"/>
+
    [pySetup]: <https://github.com/zklinger2000/maya-python-imageCard/blob/master/scripts/imageCardsImport.py>
    [gMT]: <https://github.com/zklinger2000/maya-python-imageCard/blob/master/scripts/gravModTools.py>
