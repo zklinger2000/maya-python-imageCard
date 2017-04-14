@@ -3,10 +3,10 @@ import maya.cmds as cmds
 
 
 class ZDepthShader(object):
-    def __init__(self, imageName, dirName, oldMinX, oldMaxX):
+    def __init__(self, imageName, dirName, layer, oldMinX, oldMaxX):
         self._imageName = imageName
         self._dirName = dirName
-        self._layerNum = imageName[11:14]
+        self._layerNum = str(layer)
         self._surfaceShader = cmds.shadingNode('surfaceShader',
                                                n='zSurfaceShader_' +
                                                self._layerNum,

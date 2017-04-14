@@ -3,10 +3,10 @@ import maya.cmds as cmds
 
 
 class positionShader(object):
-    def __init__(self, imageName, dirName):
+    def __init__(self, imageName, dirName, layer):
         self._imageName = imageName
         self._dirName = dirName
-        self._layerNum = imageName[11:14]
+        self._layerNum = str(layer)
         self._surfaceShader = cmds.shadingNode('surfaceShader',
                                                n='positionSurfaceShader_' +
                                                self._layerNum,

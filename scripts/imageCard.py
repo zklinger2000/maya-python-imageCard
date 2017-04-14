@@ -3,10 +3,10 @@ import maya.cmds as cmds
 
 
 class ImageCard(object):
-    def __init__(self, imageName, w=19.2, h=10.8):
+    def __init__(self, imageName, layer, w=19.2, h=10.8):
         self._imageName = imageName
-        self._shotNum = imageName[2:5]
-        self._layerNum = imageName[11:14]
+        #self._shotNum = imageName[2:5]
+        self._layerNum = str(layer)
         self._imageFile = cmds.image(image='self._imageName')
         self._width = w
         self._height = h
@@ -17,7 +17,7 @@ class ImageCard(object):
         self._shaderGroup = cmds.sets(self._card[0], edit=True,
                                       forceElement='initialShadingGroup')
         # moving into place !? This should be done here?
-        cmds.move(0, 5.4, 0, self._card, absolute=True)
+        cmds.move(0, 0, 0, self._card, absolute=True)
         cmds.rotate(0, -90, 0, self._card, relative=True)
 
     def getLayerNum(self):
