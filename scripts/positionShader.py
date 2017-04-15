@@ -2,7 +2,7 @@ __author__ = 'zklinger'
 import maya.cmds as cmds
 
 
-class positionShader(object):
+class PositionShader(object):
     def __init__(self, imageName, dirName, layer):
         self._imageName = imageName
         self._dirName = dirName

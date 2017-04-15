@@ -1,0 +1,602 @@
+Composition {
+	CurrentTime = 83,
+	RenderRange = { 83, 83, },
+	GlobalRange = { 0, 119, },
+	CurrentID = 141,
+	HiQ = true,
+	Version = "Fusion 8.0 build 16",
+	SavedOutputs = 1,
+	HeldTools = 0,
+	DisabledTools = 1,
+	LockedTools = 0,
+	AudioOffset = 0,
+	Resumable = true,
+	OutputClips = {
+		"C:\\Users\\zklinger\\Documents\\maya\\scripts\\maya-python-imageCard\\example\\example_comp.png",
+	},
+	Tools = {
+		Loader4 = Loader {
+			Clips = {
+				Clip {
+					ID = "Clip1",
+					Filename = "C:\\Users\\zklinger\\Documents\\maya\\scripts\\maya-python-imageCard\\example\\example_beauty.exr",
+					FormatID = "OpenEXRFormat",
+					StartFrame = -1,
+					LengthSetManually = true,
+					TrimIn = 0,
+					TrimOut = 0,
+					ExtendFirst = 0,
+					ExtendLast = 0,
+					Loop = 0,
+					AspectMode = 0,
+					Depth = 4,
+					TimeCode = 0,
+					GlobalStart = 0,
+					GlobalEnd = 0,
+				},
+			},
+			Inputs = {
+				Depth = Input { Value = 4, },
+				["Gamut.GammaSpaceNest"] = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				["Clip1.OpenEXRFormat.RedName"] = Input { Value = FuID { "R", }, },
+				["Clip1.OpenEXRFormat.GreenName"] = Input { Value = FuID { "G", }, },
+				["Clip1.OpenEXRFormat.BlueName"] = Input { Value = FuID { "B", }, },
+				["Clip1.OpenEXRFormat.AlphaName"] = Input { Value = FuID { "A", }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 165, 544.5, }, },
+		},
+		Loader5 = Loader {
+			Clips = {
+				Clip {
+					ID = "Clip1",
+					Filename = "C:\\Users\\zklinger\\Documents\\maya\\scripts\\maya-python-imageCard\\example\\example_AO.exr",
+					FormatID = "OpenEXRFormat",
+					StartFrame = -1,
+					LengthSetManually = true,
+					TrimIn = 0,
+					TrimOut = 0,
+					ExtendFirst = 0,
+					ExtendLast = 0,
+					Loop = 0,
+					AspectMode = 0,
+					Depth = 4,
+					TimeCode = 0,
+					GlobalStart = 0,
+					GlobalEnd = 0,
+				},
+			},
+			Inputs = {
+				Depth = Input { Value = 4, },
+				["Gamut.GammaSpaceNest"] = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				["Gamut.PreDividePostMultiply"] = Input { Value = 1, },
+				["Clip1.OpenEXRFormat.RedName"] = Input { Value = FuID { "R", }, },
+				["Clip1.OpenEXRFormat.GreenName"] = Input { Value = FuID { "G", }, },
+				["Clip1.OpenEXRFormat.BlueName"] = Input { Value = FuID { "B", }, },
+				["Clip1.OpenEXRFormat.AlphaName"] = Input { Value = FuID { "A", }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 330, 511.5, }, },
+		},
+		Loader6 = Loader {
+			Clips = {
+				Clip {
+					ID = "Clip1",
+					Filename = "C:\\Users\\zklinger\\Documents\\maya\\scripts\\maya-python-imageCard\\example\\example_zDepth.exr",
+					FormatID = "OpenEXRFormat",
+					StartFrame = -1,
+					LengthSetManually = true,
+					TrimIn = 0,
+					TrimOut = 0,
+					ExtendFirst = 0,
+					ExtendLast = 0,
+					Loop = 0,
+					AspectMode = 0,
+					Depth = 4,
+					TimeCode = 0,
+					GlobalStart = 0,
+					GlobalEnd = 0,
+				},
+			},
+			Inputs = {
+				Depth = Input { Value = 4, },
+				["Gamut.GammaSpaceNest"] = Input { Value = 1, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				["Gamut.PreDividePostMultiply"] = Input { Value = 1, },
+				["Clip1.OpenEXRFormat.RedName"] = Input { Value = FuID { "R", }, },
+				["Clip1.OpenEXRFormat.GreenName"] = Input { Value = FuID { "G", }, },
+				["Clip1.OpenEXRFormat.BlueName"] = Input { Value = FuID { "B", }, },
+				["Clip1.OpenEXRFormat.AlphaName"] = Input { Value = FuID { "A", }, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 495, 511.5, }, },
+		},
+		Background2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 960, },
+				Height = Input { Value = 540, },
+				Depth = Input { Value = 3, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				TopLeftRed = Input { Value = 0.172549019607843, },
+				TopLeftGreen = Input { Value = 0.933333333333333, },
+				TopLeftBlue = Input { Value = 1, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1045, 610.5, }, },
+		},
+		Merge2 = Merge {
+			Inputs = {
+				Blend = Input { Value = 0.9, },
+				Background = Input {
+					SourceOp = "Loader4",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Loader5",
+					Source = "Output",
+				},
+				ApplyMode = Input { Value = FuID { "Multiply", }, },
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 330, 544.5, }, },
+		},
+		ChannelBooleans1_1_1 = ChannelBoolean {
+			Inputs = {
+				ToRed = Input { Value = 4, },
+				ToGreen = Input { Value = 4, },
+				ToBlue = Input { Value = 4, },
+				ToAlpha = Input { Value = 4, },
+				EnableExtraChannels = Input { Value = 1, },
+				ToZBuffer = Input { Value = 10, },
+				Background = Input {
+					SourceOp = "Merge2",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Loader6",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 495, 544.5, }, },
+		},
+		DepthBlur1 = DepthBlur {
+			Inputs = {
+				XBlurSize = Input { Value = 6, },
+				FocalPoint = Input { Value = 0.320068359375, },
+				DepthOfField = Input { Value = 0.1, },
+				ZScale = Input { Value = 0.4, },
+				Input = Input {
+					SourceOp = "ChannelBooleans1_1_1",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 935, 544.5, }, },
+		},
+		Merge3 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "Background2",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "DepthBlur1",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1210, 610.5, }, },
+		},
+		Background1_1_1 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 960, },
+				Height = Input { Value = 540, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				TopLeftRed = Input { Value = 1, },
+				TopLeftGreen = Input { Value = 1, },
+				TopLeftBlue = Input { Value = 1, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1100, 445.5, }, },
+		},
+		BSpline1_1 = BSplineMask {
+			DrawMode = "InsertAndModify",
+			DrawMode2 = "InsertAndModify",
+			PolyLine2Disabled = true,
+			Inputs = {
+				MaskWidth = Input { Value = 1920, },
+				MaskHeight = Input { Value = 1080, },
+				PixelAspect = Input { Value = { 1, 1, }, },
+				ClippingMode = Input { Value = FuID { "None", }, },
+				Center = Input { Value = { 0.483625730994152, 0.501754385964912, }, },
+				Polyline = Input {
+					SourceOp = "BSpline1_1Polyline",
+					Source = "Value",
+				},
+				Polyline2 = Input {
+					SourceOp = "BSpline1_1Polyline2",
+					Source = "Value",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 935, 445.5, }, },
+		},
+		BSpline1_1Polyline = BezierSpline {
+			SplineColor = { Red = 173, Green = 255, Blue = 47, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { Linear = true, LockedY = true, }, Value = BSplinePolyline {
+						Closed = true,
+						Points = {
+							{ LockPF = true, LockP = true, X = -0.398278564214706, Y = 0.0751173719763756, },
+							{ LockP = true, X = -0.413928007435911, Y = -0.460093896153947, },
+							{ LockP = true, X = -0.168231606483459, Y = -0.389671355485916, },
+							{ LockP = true, X = 0.230829417705536, Y = -0.382629096508026, },
+							{ LockP = true, X = 0.471830999207609, Y = -0.441314556089365, },
+							{ LockP = true, X = 0.438967138528824, Y = 0.0211267601698637, },
+							{ LockP = true, X = 0.460876376229646, Y = 0.373239425146524, },
+							{ LockP = true, X = 0.180751174688339, Y = 0.363849759101868, },
+							{ LockP = true, X = -0.185446009039879, Y = 0.34272301197052, },
+							{ LockP = true, X = -0.407668238234632, Y = 0.370892026194944, },
+						},
+						Order = 4,
+						Type = "Tensioned",
+						Knots = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, },
+					}, },
+			},
+		},
+		BSpline1_1Polyline2 = BezierSpline {
+			SplineColor = { Red = 160, Green = 252, Blue = 4, },
+			NameSet = true,
+			KeyFrames = {
+				[0] = { 0, Flags = { Linear = true, LockedY = true, }, Value = BSplinePolyline {
+						Closed = true,
+						Points = {
+							{ LockPF = true, LockP = true, X = -0.462441318518306, Y = 0.0187793438073616, },
+							{ LockP = true, X = -0.547047190369771, Y = -0.649888805963683, },
+							{ LockP = true, X = -0.188131120526784, Y = -0.595972319162714, },
+							{ LockP = true, X = 0.249987641904531, Y = -0.555572017190013, },
+							{ LockP = true, X = 0.610814608465495, Y = -0.661032865948521, },
+							{ LockP = true, X = 0.498435057151672, Y = -0.0140845074357702, },
+							{ LockP = true, X = 0.619084102117134, Y = 0.65329872833407, },
+							{ LockP = true, X = 0.174491393780671, Y = 0.535211261449286, },
+							{ LockP = true, X = -0.202660406535967, Y = 0.492957753754558, },
+							{ LockP = true, X = -0.563866244988606, Y = 0.634000501608831, },
+						},
+						Order = 4,
+						Type = "Tensioned",
+						Knots = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, },
+					}, },
+			},
+		},
+		Background1_2 = Background {
+			Inputs = {
+				GlobalOut = Input { Value = 119, },
+				Width = Input { Value = 960, },
+				Height = Input { Value = 540, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				Gradient = Input {
+					Value = Gradient {
+						Colors = {
+							[0] = { 0, 0, 0, 1, },
+							[1] = { 1, 1, 1, 1, },
+						},
+					},
+				},
+				EffectMask = Input {
+					SourceOp = "BSpline1_1",
+					Source = "Mask",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 935, 478.5, }, },
+		},
+		Merge1_2 = Merge {
+			Inputs = {
+				Background = Input {
+					SourceOp = "Background1_1_1",
+					Source = "Output",
+				},
+				Foreground = Input {
+					SourceOp = "Background1_2",
+					Source = "Output",
+				},
+				PerformDepthMerge = Input { Value = 0, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 1155, 478.5, }, },
+		},
+		ColorCorrector1_2 = ColorCorrector {
+			Inputs = {
+				MaskChannel = Input { Value = 5, },
+				Menu = Input { Value = 1, },
+				MasterRGBMid = Input { Value = 0.510830771143942, },
+				ColorRanges = Input {
+					Value = ColorCurves {
+						Curves = {
+							{
+								Points = {
+									{ 0, 1, },
+									{ 0.4, 0.2, },
+									{ 0.6, 0, },
+									{ 1, 0, },
+								},
+							},
+							{
+								Points = {
+									{ 0, 0, },
+									{ 0.4, 0, },
+									{ 0.6, 0.2, },
+									{ 1, 1, },
+								},
+							},
+						},
+					},
+				},
+				HistogramIgnoreTransparent = Input { Value = 1, },
+				Input = Input {
+					SourceOp = "Merge3",
+					Source = "Output",
+				},
+				EffectMask = Input {
+					SourceOp = "Merge1_2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1265, 544.5, }, },
+		},
+		Saver3 = Saver {
+			CtrlWZoom = false,
+			Inputs = {
+				ProcessWhenBlendIs00 = Input { Value = 0, },
+				Clip = Input {
+					Value = Clip {
+						Filename = "C:\\Users\\zklinger\\Documents\\maya\\scripts\\maya-python-imageCard\\example\\example_comp.png",
+						FormatID = "PNGFormat",
+						Length = 0,
+						Saving = true,
+						TrimIn = 0,
+						ExtendFirst = 0,
+						ExtendLast = 0,
+						Loop = 1,
+						AspectMode = 0,
+						Depth = 0,
+						GlobalStart = -2000000000,
+						GlobalEnd = 0,
+					},
+				},
+				OutputFormat = Input { Value = FuID { "PNGFormat", }, },
+				["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2", }, },
+				Input = Input {
+					SourceOp = "ColorCorrector1_2",
+					Source = "Output",
+				},
+			},
+			ViewInfo = OperatorInfo { Pos = { 1430, 544.5, }, },
+		},
+		SoftGlow1_1 = SoftGlow {
+			PassThrough = true,
+			Inputs = {
+				Blend = Input { Value = 0.3, },
+				Gain = Input { Value = 1, },
+			},
+			ViewInfo = OperatorInfo { Pos = { 715, 577.5, }, },
+		},
+	},
+	Views = {
+		{
+			FrameTypeID = "ChildFrame",
+			Mode = 3,
+			LayoutPreset = 0,
+			Left = 0,
+			Top = 27,
+			Width = 1920,
+			Height = 911,
+			Views = ordered() {
+				Main = MultiView {
+					Active = "Flow",
+					ViewList = ordered() {
+						Flow = "FlowView",
+						Console = "ConsoleView",
+						Timeline = "TimelineView",
+						Spline = "SplineEditorView",
+						Info = "InfoView",
+						Chat = "ChatView",
+					},
+					Flow = FlowView {
+						Flags = {
+							Navigator = true,
+							AutoHideNavigator = true,
+							GridSnap = true,
+							AutoSnap = true,
+							RemoveRouters = true,
+						},
+						NavigatorSize = { 200, 140, },
+						Direction = "Horizontal",
+						PipeStyle = "Direct",
+						Scale = 1.08673,
+						Offset = { -268.694, -332.838, },
+					},
+					Timeline = TimelineView {
+						TreeControlState = {
+						},
+						DisplayMode = "All Tools",
+						ShowCurrentTimeTools = false,
+						Filter = "Show All",
+						ShowSelectedTools = false,
+						ShowAnimatedToolsOnly = false,
+						ShowEditBoxes = false,
+						KeyFrameView = {
+							Position = { Left = 150, Bottom = 311, },
+							ScaleX = 0.255165692007797,
+							OffsetX = -12.5031189083821,
+							OffsetY = 0,
+							AutoScaling = "scroll",
+							AutoSnapTo = "frame",
+							AutoSnapToGuidelines = false,
+							GuidelinesGrabEnabled = true,
+							GuidelinesSnapTo = "none",
+						},
+						Spreadsheet = { LeftPos = 150, Visible = false, },
+					},
+					Spline = SplineEditorView {
+						LeftPos = 256,
+						ScaleX = 0.2,
+						ScaleY = 0.00338983050847458,
+						OffsetX = 44.2,
+						OffsetY = 0,
+						AutoScaling = "scroll",
+						AutoSnapTo = "frame",
+						AutoSnapToGuidelines = false,
+						GuidelinesSnapTo = "frame",
+						ShowKeyMarkers = false,
+						IndependentHandles = false,
+						ShowNonSplineModifiers = false,
+						GuidelinesGrabEnabled = true,
+						ShowOneToolOnly = false,
+						ShowSelectedTools = false,
+						ShowAllInputs = false,
+						Filter = "Show All",
+					},
+				},
+				Controls = MultiView {
+					Active = "Tools",
+					ViewList = ordered() {
+						Tools = "ControlView",
+						Modifiers = "ModifierView",
+					},
+				},
+				Left = "PreviewContainer",
+				Right = "PreviewContainer",
+				Transport = "TransportView",
+				Time = "TimeView",
+			},
+			Layout = {
+				Columns = 2,
+				RatioX = 1,
+				RatioY = 1,
+				{
+					Rows = 3,
+					RatioX = 0.833420365535248,
+					RatioY = 0.0099009900990099,
+					{
+						Columns = 2,
+						RatioX = 1,
+						RatioY = 0.574750830564784,
+						{ ID = "Left", RatioX = 0.4030131826742, RatioY = 0.0108191653786708, Pop = true, },
+						{ ID = "Right", RatioX = 0.5969868173258, Pop = true, },
+						Pop = true,
+					},
+					{ ID = "Main", RatioY = 0.361018826135105, Pop = true, },
+					{ ID = "Time", SnapY = 56, Flat = true, },
+				},
+				{
+					Rows = 2,
+					PixelX = 317,
+					{ ID = "Controls", RatioX = 1, RatioY = 1, },
+					{ ID = "Transport", FixedY = -2, },
+				},
+			},
+		},
+	},
+	Prefs = {
+		Comp = {
+			Views = {
+				Right = {
+					Viewer = {
+						ScaleMode = 1,
+						Normalise = false,
+						Channel = 4294967295,
+						Smooth = false,
+					},
+					ViewLUT = {
+						{
+							Tools = ordered() {
+								FusionViewLUT = ViewLUTOp {
+									NameSet = true,
+									Inputs = {
+									},
+								},
+							},
+							ID = "FusionViewLUT",
+						},
+						SelectedPlugin = "FusionViewLUT",
+						SelectedName = "",
+					},
+				},
+				Left = {
+					Viewer = {
+						ScaleMode = 1,
+						Channel = 4294967295,
+					},
+				},
+				View1 = {
+				},
+			},
+			FrameFormat = {
+				GuideRatio = 1.77777777777778,
+			},
+			LastFile = "C:\\Users\\zklinger\\Google Drive\\Docs\\PROJECTS\\CUTS\\PANCAKE\\images\\masterLayer\\cuts_panc_work_104_beauty.0001.exr",
+			PolyKeyListDlg = {
+				Window = {
+					Left = 0,
+					Top = 0,
+				},
+			},
+			Unsorted = {
+				GlobalEnd = 119,
+				RenderSettings = {
+					Configs = {
+						Final = {
+							StepRender = false,
+							PriorityClasses = "all",
+							SizeType = 1,
+							MotionBlur = true,
+							CustomAspect = true,
+							CustomHeight = 160,
+							ShowSlaves = false,
+							CustomWidth = 200,
+							StepSize = 5,
+							UpdateMode = "Some",
+							UseNetwork = false,
+							Quality = true,
+						},
+						Preview = {
+							StepRender = false,
+							PriorityClasses = "all",
+							SizeType = 1,
+							MotionBlur = true,
+							CustomAspect = true,
+							CustomHeight = 160,
+							ShowSlaves = false,
+							CustomWidth = 200,
+							StepSize = 5,
+							UpdateMode = "Some",
+							UseNetwork = false,
+							Quality = false,
+						},
+					},
+					PreviewConfig = "Preview",
+					CurrentConfig = "Final",
+				},
+			},
+			Paths = {
+			},
+			QuickTime = {
+			},
+		},
+	},
+}
+
+ 
