@@ -32,6 +32,37 @@ positionRenderLayer = cmds.createRenderLayer(empty=True,
                                              name='positionRenderLayer',
                                              number=3, noRecurse=True)
 
+# TODO: Create camera group with two locators
+# Create a camera and get the shape name.
+# camera -centerOfInterest 5 -focalLength 35 -lensSqueezeRatio 1 -cameraScale 1 -horizontalFilmAperture 1.41732 -horizontalFilmOffset 0 -verticalFilmAperture 0.94488 -verticalFilmOffset 0 -filmFit Fill -overscan 1 -motionBlur 0 -shutterAngle 144 -nearClipPlane 0.1 -farClipPlane 10000 -orthographic 0 -orthographicWidth 30 -panZoomEnabled 0 -horizontalPan 0 -verticalPan 0 -zoom 1; objectMoveCommand; cameraMakeNode 1 ""
+cameraMain = cmds.camera()
+cameraShape = cameraMain[1]
+cmds.move(0, 0, 10, cameraShape, absolute=True)
+
+nearLocator=cmds.spaceLocator(n="nearLocator")
+nearLocatorShape=nearLocator[0]
+cmds.move(0,0,5,nearLocatorShape)
+
+farLocator=cmds.spaceLocator(n="farLocator")
+farLocatorShape=farLocator[0]
+cmds.move(0,0,-5,farLocatorShape)
+
+nearDistance = cmds.shadingNode('distanceBetween',
+                                  n='nearDistance',
+                                  asUtility=True)
+cmds.connectAttr(nearLocatorShape + '.translate', nearDistance + '.point1',
+                 force=True)
+cmds.connectAttr(cameraMain[0] + '.translate', nearDistance + '.point2',
+                 force=True)
+
+farDistance = cmds.shadingNode('distanceBetween',
+                                  n='farDistance',
+                                  asUtility=True)
+cmds.connectAttr(farLocatorShape + '.translate', farDistance + '.point1',
+                 force=True)
+cmds.connectAttr(cameraMain[0] + '.translate', farDistance + '.point2',
+                 force=True)                
+
 # Create each imageCard with shaders for each render pass
 for x in range(0, len(data['layers'])):
     name = data['layers'][x]['name']
@@ -43,17 +74,17 @@ for x in range(0, len(data['layers'])):
     # Create Card
     card = ImageCard(name + '.png', x, w=width, h=height)
     # Move card into position
-    card.move(moveX, moveY, 0)
+    card.moveRelative(moveX, moveY, 0)
     # Set Image Object
     im = Image.open(imageFolder + name + '.png')
     # Set up the beauty pass shader and add to render layer
     # TODO: add layer number to each shader class and refactor str() logic
-    xPassShader = XPassShader(name + '.png', imageFolder)
+    xPassShader = XPassShader(name + '.png', imageFolder, x)
     cmds.editRenderLayerGlobals(currentRenderLayer='defaultRenderLayer')
     card.setSG(xPassShader.getSG())
     # Set up the zDepth pass shader and add to render layer
     # TODO: create some measurement locators to pass into ZDepthShader() that retain the linking so we can set them later before render
-    zDepthShader = ZDepthShader(name + '.png', imageFolder, x, 34, 55)
+    zDepthShader = ZDepthShader(name + '.png', imageFolder, x, nearDistance, farDistance)
     cmds.editRenderLayerMembers(zDepthRenderLayer,
                                 card.getPolyNode(),
                                 noRecurse=True)
